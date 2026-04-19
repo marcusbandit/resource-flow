@@ -4,14 +4,28 @@ Client-side Mindustry mod: replaces the vanilla core-items bar with a compact HU
 
 Works on vanilla servers — it only reads client-side state and draws UI.
 
+![Resource Flow HUD](screenshot.png)
+
 ## Features
 
-- Format per item: `[icon] <count>` (idle) or `[icon] <count> (+X/s)` (producing) / `(-X/s)` (consuming)
+- Per item: `[icon] <count>` idle, or `[icon] <count> +X/s` producing / `-X/s` consuming
 - Green = net gain, red = net loss
-- Sampled once per second, so the rate is an average over that window
-- Items wrap to a new row after 4 per row
-- Column widths are fixed so items don't jump around when rates appear or disappear
+- Items wrap to a new row after 4 per row, with fixed column widths so things don't jump around as rates change
 - Items stay in their slot once seen, even if the count temporarily drops to zero
+
+## Settings
+
+Found under `Settings > Game > Resource Flow`:
+
+| Setting | Default | Description |
+|---|---|---|
+| Show +/- rate | on | Toggle the rate column entirely |
+| Wrap rate in brackets | off | `+3.2k/s` vs `(+3.2k/s)` |
+| Hide items with no change | off | Drop items whose rate is zero |
+| Background opacity | 40% | Fades only the panel, not the text |
+| Sample interval | 1.0s | Window the rate is averaged over |
+
+Plus a keybind under `Controls > Resource Flow` (**F9** by default) that toggles the rate column on/off live.
 
 ## Install
 

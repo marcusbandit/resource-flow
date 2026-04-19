@@ -2,7 +2,7 @@ name: resource-flow
 displayName: Resource Flow
 author: bandit
 description: HUD overlay showing net production/consumption per second for each item in your team's core inventory. Client-side.
-version: 0.1
+version: 0.2
 minGameVersion: 157
 java: true
 main: bandit.resourceflow.ResourceFlowMod
