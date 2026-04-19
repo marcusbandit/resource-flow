@@ -1,0 +1,35 @@
+apply plugin: "java"
+
+version '0.1'
+sourceCompatibility = 17
+targetCompatibility = 17
+
+sourceSets.main.java.srcDirs = ["src/"]
+
+repositories{
+    mavenCentral()
+    maven{ url 'https://www.jitpack.io' }
+}
+
+ext{
+    // Match the game version you're running.
+    // See https://github.com/Anuken/Mindustry/releases
+    mindustryVersion = 'v157'
+}
+
+dependencies{
+    compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
+    compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
+}
+
+jar{
+    archiveFileName = "resource-flow.jar"
+
+    from{
+        configurations.runtimeClasspath.collect{ it.isDirectory() ? it : zipTree(it) }
+    }
+
+    from(rootDir){
+        include "mod.hjson"
+    }
+}

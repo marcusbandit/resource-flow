@@ -1,0 +1,8 @@
+build/
+.gradle/
+libs/Mindustry.jar
+libs/*.jar
+*.class
+.idea/
+*.iml
+.vscode/
